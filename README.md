@@ -87,3 +87,7 @@
           ```
     -  GET request to `http://localhost:3000/api/diaries` , should return message:  
          -  _Fetching all diaries!_
+    
+1. Write code for data manipulation in `src/services directory`
+    
+    - First, save the `entries.json` data to `data/entries.json`
