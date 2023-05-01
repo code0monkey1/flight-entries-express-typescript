@@ -60,3 +60,4 @@
    
 1. Place all `routers` and modules which are responsible for handling a set of specific resources such as diaries, under the directory `src/routes`.
       - `Router` taking care of all diary endpoints is in [`src/routes/diaries.ts`](./src/routes/diaries.ts "view source code") 
+1. 
