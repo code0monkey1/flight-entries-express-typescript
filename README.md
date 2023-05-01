@@ -58,4 +58,7 @@
 
 1. Place all source code under src directory, so source code is not mixed with configuration files.
       - move `index.ts` to src
-      - change dev script to`"dev": "ts-node-dev src/index.ts"` 
+      - change dev script to`"dev": "ts-node-dev src/index.ts"`
+   
+1. Place all `routers` and modules which are responsible for handling a set of specific resources such as diaries, under the directory `src/routes`.
+      - `Router` taking care of all diary endpoints is in [`src/routes/diaries.ts`](./src/routes/diaries.ts "view source code") 
