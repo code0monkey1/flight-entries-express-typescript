@@ -1,3 +1,11 @@
 export type Visibility = 'great' | 'good' | 'ok' | 'poor';
 
-export type Weather = 'good' | 'windy' | 'rainy' | 'stormy';
+export type Weather = 'sunny' | 'windy' | 'rainy' | 'cloudy';
+
+export interface DiaryEntry {
+      id: number;
+      date: string;
+      weather: Weather;
+      visibility: Visibility;
+      comment: string;
+    }

@@ -2,12 +2,16 @@ import express from 'express';
 
 const router = express.Router();
 
+import diaryService from '../services/diaryService';
+
 router.get('/', (_req, res) => {
-  res.send('Fetching all diaries!');
+  const diaryEntries = diaryService.getEntries();
+  res.json(diaryEntries);
+ 
 });
 
 router.post('/', (_req, res) => {
-  res.send('Saving a diary!');
+   res.send('Saving Entry');
 });
 
 export default router;

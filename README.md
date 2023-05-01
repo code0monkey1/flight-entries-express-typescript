@@ -148,5 +148,5 @@
           }
       
       ```
-  1. 
+  1. Type our imported JSON:
           
