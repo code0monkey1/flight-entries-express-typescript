@@ -91,3 +91,23 @@
 1. Write code for data manipulation in `src/services directory`
     
     - First, save the `entries.json` data to `data/entries.json`
+    - Create a `src/services` directory and place the `diaryService.ts` file in it.
+  
+        ```javascript
+      
+            import diaryData from '../../data/entries.json'; // this will give error 
+              
+            const getEntries = () => {
+                return diaryData;
+              };
+              
+            const addDiary = () => {
+                return null;
+              };
+              
+            export default {
+                getEntries,
+                addDiary
+                };
+      
+        ```
