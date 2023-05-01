@@ -85,3 +85,5 @@
           });
                    
           ```
+    -  GET request to `http://localhost:3000/api/diaries` , should return message:  
+         -  _Fetching all diaries!_
