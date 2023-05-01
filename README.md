@@ -52,8 +52,6 @@
 ]
   ```
 
----
-
 ### Decisions on how to structure our source code 
 
 1. Place all source code under src directory, so source code is not mixed with configuration files.
