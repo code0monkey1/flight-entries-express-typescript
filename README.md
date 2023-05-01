@@ -151,3 +151,8 @@
  >  it is recommended that `within a` flat `directory`, `each file` with a valid node module extension has a `unique filename`.
           
 
+1. Create a `sensitive` diary entry type , which will be sent to the frontend ( and has the comment removed ) . Create a `type alias` for it too , for code readability
+     
+       const se
+
+   

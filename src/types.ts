@@ -10,4 +10,4 @@ export interface DiaryEntry {
       comment?: string; // comments are optional
     }
 
-export type NonSensitiveDiaryEntry =Omit<DiaryEntry,'comment'>; 
+export type SensitiveDiaryEntry =Omit<DiaryEntry,'comment'>; 
