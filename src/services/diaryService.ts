@@ -4,7 +4,7 @@
  // type assertion
  const diaries:DiaryEntry[] = diaryData as DiaryEntry[];
 
- import { DiaryEntry, SensitiveDiaryEntry } from '../types';
+ import { DiaryEntry, NonSensitiveDiaryEntry } from '../types';
 
     const getEntries = ():DiaryEntry[] => {
                 // we are taking a risk here by asserting  the return values type to be of type DiaryEntry
@@ -13,13 +13,15 @@
             };
     
   
-const getNonSensitiveEntries = (): SensitiveDiaryEntry[] => {
-  return diaries.map(({ id, date, weather, visibility }) => ({
-    id,
-    date,
-    weather,
-    visibility,
-  }));
+const getNonSensitiveEntries = (): NonSensitiveDiaryEntry[] => {
+  // return diaries.map(({ id, date, weather, visibility }) => ({
+  //   id,
+  //   date,
+  //   weather,
+  //   visibility,
+  // }));
+
+  return diaries;
 };
     
     const addDiary = () => {

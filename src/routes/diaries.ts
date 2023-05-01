@@ -5,8 +5,8 @@ const router = express.Router();
 import diaryService from '../services/diaryService';
 
 router.get('/', (_req, res) => {
-  const diaryEntries = diaryService.getEntries();
-  res.json(diaryEntries);
+
+  res.json(diaryService.getNonSensitiveEntries());
  
 });
 
