@@ -2,16 +2,16 @@
  import diaryData from '../../data/entries.json'; // this will give error initially
           
  /* eslint-disable @typescript-eslint/no-unsafe-return */
-            const getEntries = () => {
+     const getEntries = () => {
                 return diaryData;
               };
               
-            const addDiary = () => {
+    const addDiary = () => {
                 return null;
               };
               
-            export default {
+    export default {
                 getEntries,
                 addDiary
-                };
+     };
       

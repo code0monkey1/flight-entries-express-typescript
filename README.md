@@ -13,8 +13,8 @@
 **Fields in a Diary Entry** :
 
   + The `Date` of the entry
-  + `Weather` conditions (good, windy, rainy or stormy)
-  + `Visibility` (good, ok or poor)
+  + `Weather` conditions (`good`, `windy`, `rainy` or `stormy`)
+  + `Visibility` (`good`, `ok` or `poor`)
   + Free text `Comment` detailing the experience
 
 
@@ -118,3 +118,15 @@
           Cannot find module '../../data/entries.json'. Consider using '--resolveJsonModule' to import module with '.json' extension.ts(2732)
 
        ```
+
+   - Add `/* eslint-disable @typescript-eslint/no-unsafe-return */` on top of` const getEntries = () => {` , till we define our types.
+  
+  
+----------------------------------------------------------------
+
+### Defining our types :
+
+ > Create a file for our types, `types.ts`, where we'll define all our types for this project
+
+ 1. Type the `Weather` and `Visibility` values using a union type of the allowed strings in [types.ts](./src/types.ts "go to source code")
+    
