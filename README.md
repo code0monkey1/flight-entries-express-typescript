@@ -60,4 +60,28 @@
    
 1. Place all `routers` and modules which are responsible for handling a set of specific resources such as diaries, under the directory `src/routes`.
       - `Router` taking care of all diary endpoints is in [`src/routes/diaries.ts`](./src/routes/diaries.ts "view source code") 
-1. 
+      - We'll route all requests to prefix `/api/diaries` to that specific router in `index.ts` like so : 
+          ```javascript
+
+          //index.ts
+
+          import express from 'express';
+          import diaryRouter from './routes/diaries'; // <- change here
+          const app = express();
+          app.use(express.json());
+          
+          const PORT = 3000;
+          
+          app.get('/ping', (_req, res) => {
+            console.log('someone pinged here');
+            res.send('pong');
+          });
+          
+          app.use('/api/diaries', diaryRouter); // <- change here
+          
+          
+          app.listen(PORT, () => {
+              console.log(`Server running on port ${PORT}`);
+          });
+                   
+          ```
