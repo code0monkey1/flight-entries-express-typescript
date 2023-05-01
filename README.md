@@ -126,7 +126,27 @@
 
 ### Defining our types :
 
- > Create a file for our types, `types.ts`, where we'll define all our types for this project
+   > Create a file for our types, `types.ts`, where we'll define all our types for this project
 
- 1. Type the `Weather` and `Visibility` values using a union type of the allowed strings in [types.ts](./src/types.ts "go to source code")
+  1. Type the `Weather` and `Visibility` values using a union type of the allowed strings in [types.ts](./src/types.ts "go to source code")
+   
+      ```javascript
+         export type Visibility = 'great' | 'good' | 'ok' | 'poor';
+
+         export type Weather = 'good' | 'windy' | 'rainy' | 'stormy';
+      ```
     
+  1. Next create a `DiaryEntry` type, which will be an interface:
+  
+      ```javascript
+          export interface DiaryEntry {
+            id: number;
+            date: string;
+            weather: Weather;
+            visibility: Visibility;
+            comment: string;
+          }
+      
+      ```
+  1. 
+          
