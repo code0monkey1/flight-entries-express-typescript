@@ -94,7 +94,7 @@
     - Create a `src/services` directory and place the `diaryService.ts` file in it.
   
         ```javascript
-      
+            //diaryService.ts 
             import diaryData from '../../data/entries.json'; // this will give error 
               
             const getEntries = () => {
@@ -110,4 +110,11 @@
                 addDiary
                 };
       
-        ```
+        ```  
+    - To get rid of the following error ,  add `"resolveJsonModule": true` to our `tsconfig.json` file :
+       
+       ```javascript
+
+          Cannot find module '../../data/entries.json'. Consider using '--resolveJsonModule' to import module with '.json' extension.ts(2732)
+
+       ```
