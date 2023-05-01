@@ -155,12 +155,11 @@
         
         const diaries:DiaryEntry[] = diaryData as DiaryEntry[];
       ```
-   1. Create a `sensitive diary entry` _type_ , which will be sent to the frontend ( and has the comment removed ) . Create a `type alias` for it too , for code readability .
+   2. Create a `NonSensitiveDiaryEntry` _type_ using the `Omit` utility type, which will be sent to the frontend ( and has the comment removed ) . Create a `type alias` for it too , for code readability .
      
       ```javascript
-
-    
-       
+        export type NonSensitiveDiaryEntry = Omit<DiaryEntry,'comment'>
+        
       ```
 
    
