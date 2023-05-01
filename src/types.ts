@@ -9,3 +9,5 @@ export interface DiaryEntry {
       visibility: Visibility;
       comment?: string; // comments are optional
     }
+
+export type NonSensitiveDiaryEntry =Omit<DiaryEntry,'comment'>; 
