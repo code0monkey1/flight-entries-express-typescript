@@ -11,9 +11,13 @@ router.get('/', (_req, res) => {
 });
 
 router.get("/:id", (req, res) => {
- 
-   const {id} = req.params;
-   res.json(diaryService.findById(id));
+
+   const diary = diaryService.findById(req.params.id);
+    
+   if(!diary)
+      res.status(404).end();
+   else
+      res.json(diary);
 
 });
 

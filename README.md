@@ -183,3 +183,35 @@
                    
                   });
         ```
+---
+
+### Getting a specific diary entry give it's id :
+    
+  1. You need to account for the undefined value , when you query for some data.  
+  
+      ```javascript
+      // services/diaryService.ts
+
+      const findById = (id: number): DiaryEntry | undefined => {
+        const entry = diaries.find(d => d.id === id);
+        return entry;
+      ```
+   2. The route handler for it :
+
+          ```javascript
+            // routes/diaries.ts
+                    import express from 'express';
+                    import diaryService from '../services/diaryService'
+                    
+                    router.get('/:id', (req, res) => {
+                      const diary = diaryService.findById(Number(req.params.id));
+                    
+                      if (diary) { // here you deal with the undefined value
+                        res.send(diary);
+                      } else {
+                        res.status(404);
+                      }
+                    });
+                    
+          ```
+
