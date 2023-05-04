@@ -10,6 +10,13 @@ router.get('/', (_req, res) => {
  
 });
 
+router.get("/:id", (req, res) => {
+ 
+   const {id} = req.params;
+   res.json(diaryService.findById(id));
+
+});
+
 router.post('/', (_req, res) => {
    res.send('Saving Entry');
 });
