@@ -166,4 +166,20 @@
   
       >Because `TypeScript doesn't modify the actual data` but only its type, `we need to exclude the fields ourselves`
   
-  2. 
+  1. Finally , pass the sensitive entries to the frontend via Diaries route :
+          
+        ```javascript
+                  // routes/diaries.ts
+        
+                  import express from 'express';
+        
+                  const router = express.Router();
+                  
+                  import diaryService from '../services/diaryService';
+                  
+                  router.get('/', (_req, res) => {
+                  
+                    res.json(diaryService.getNonSensitiveEntries());
+                   
+                  });
+        ```
