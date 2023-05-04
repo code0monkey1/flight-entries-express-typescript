@@ -16,13 +16,14 @@
   
 const getNonSensitiveEntries = (): NonSensitiveDiaryEntry[] => {
   // you need to filter the comment out , as otherwise you would leak
-  // the sensitive data to the frontend.
+  // the sensitive  `comments` data to the frontend.
   return diaries.map(({ id, date, weather, visibility }) => ({
     id,
     date,
     weather,
     visibility,
   }));
+
 };
     
     const addDiary = () => {

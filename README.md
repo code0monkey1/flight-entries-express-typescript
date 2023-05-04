@@ -156,9 +156,14 @@
         
         const diaries:DiaryEntry[] = diaryData as DiaryEntry[];
       ```
-   2. Create a `NonSensitiveDiaryEntry` _type_ using the `Omit` utility type, which will be sent to the frontend ( and has the comment removed ) .   Create a `type alias` for it too , for code readability .
+   1. Create a `NonSensitiveDiaryEntry` _type_ using the `Omit` utility type, which will be sent to the frontend ( and has the comment removed ) .   Create a `type alias` for it too , for code readability .
      
       ```javascript
         export type NonSensitiveDiaryEntry = Omit<DiaryEntry,'comment'>
         
       ```
+  1. Ensure that `comments` are filtered out from the ` getNonSensitiveEntries` , because , just put putting  the `Omit` type in the return statement , you can't just ensure that `comments` would not go to the frontend ( you need to filter out comments explicitly )
+  
+      >Because `TypeScript doesn't modify the actual data` but only its type, `we need to exclude the fields ourselves`
+  
+  2. 
