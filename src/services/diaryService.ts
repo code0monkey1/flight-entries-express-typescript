@@ -8,7 +8,7 @@
                 
  import { DiaryEntry, NonSensitiveDiaryEntry } from '../types';
 
-    const getEntries = ():DiaryEntry[] => {
+ const getEntries = ():DiaryEntry[] => {
                
                 return diaries;
             };
