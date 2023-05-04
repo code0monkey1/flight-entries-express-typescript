@@ -111,8 +111,9 @@
                 };
       
         ```  
+
     - To get rid of the following error ,  add `"resolveJsonModule": true` to our `tsconfig.json` file :
-       
+
        ```javascript
 
           Cannot find module '../../data/entries.json'. Consider using '--resolveJsonModule' to import module with '.json' extension.ts(2732)
@@ -151,15 +152,13 @@
        >  it is recommended that `within a` flat `directory`, `each file` with a valid node module extension has a `unique filename`.
                 
       ```javascript
-        // type assertion to get rid of the error with the weather type.
+        // type assertion to get rid of the error with the `Weather`  and `Visibility` type.
         
         const diaries:DiaryEntry[] = diaryData as DiaryEntry[];
       ```
-   2. Create a `NonSensitiveDiaryEntry` _type_ using the `Omit` utility type, which will be sent to the frontend ( and has the comment removed ) . Create a `type alias` for it too , for code readability .
+   2. Create a `NonSensitiveDiaryEntry` _type_ using the `Omit` utility type, which will be sent to the frontend ( and has the comment removed ) .   Create a `type alias` for it too , for code readability .
      
       ```javascript
         export type NonSensitiveDiaryEntry = Omit<DiaryEntry,'comment'>
         
       ```
-
-   
