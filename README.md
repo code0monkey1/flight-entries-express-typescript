@@ -249,4 +249,7 @@
 
       > **unknown** is the ideal type for our kind of situation of input validation, since we don't yet need to define the type to match any type, but can first verify the type and then confirm the expected type.
 
-  1. Next , we pass the sanitized values to the `addNewEntry` function. 
+  1. The way we sanitize the data is by using `TypeGuards`
+   
+       + Type guards  
+       
