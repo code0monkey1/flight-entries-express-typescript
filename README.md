@@ -263,7 +263,7 @@
        
            ``` 
 
-       + Next , we move to a more specific type , eg : a Date ( you need to have verified already that it's a string before confirming that the incoming string is a Date type)
+       + Next , we move to a more general type , eg : a Date ( you need to have verified already that it's a string before confirming that the incoming string is a Date type)
          + isDate :
            
              ```javascript
@@ -273,6 +273,21 @@
                           return Boolean(Date.parse(date));
                   };
              ```
+      + Next, we move to an even more general type , where we chain the above 2 functions together to get the parsedDate .
+         + parseDate :
+             ```javascript
+               const parseDate = (date:unknown):string => {
+    
+                    if(!date || !isString(date) || !isDate(date)){
+                        
+                        throw new Error('Incorrect or missing date: ' + date);
+                      }
+                  
+                      return date;
+                  
+                };
+             ```
+  
      
        
     
