@@ -287,7 +287,7 @@
                   
                 };
              ```
-  
+      > Similarly we can go on doing this for comments and `Visibility` and `Weather`
      
        
     
