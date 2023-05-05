@@ -287,7 +287,24 @@
                   
                 };
              ```
-      > Similarly we can go on doing this for comments and `Visibility` and `Weather`
+      
+      + isVisibility:
+          > Similarly we can go on doing this for comments and `Visibility` and `Weather`  
+          
+          ```javascript
+
+            const isVisibility = (param: string): param is Visibility => {
+              return Object.values(Visibility).map(v => v.toString()).includes(param);
+            };
+            
+            const parseVisibility = (visibility: unknown): Visibility => {
+              if (!visibility || !isString(visibility) || !isVisibility(visibility)) {
+                  throw new Error('Incorrect or missing visibility: ' + visibility);
+              }
+              return visibility;
+            };
+
+          ```    
      
        
     
