@@ -251,5 +251,14 @@
 
   1. The way we sanitize the data is by using `TypeGuards`
    
-       + Type guards  
+       + isString :
+       
+          ```javascript
+            const isString = (text: unknown):text is string=>{
+   
+               return typeof text === "string";
+
+                 };
+          ``` 
+       + isDate 
        
