@@ -135,6 +135,25 @@
          export type Visibility = 'great' | 'good' | 'ok' | 'poor';
 
          export type Weather = 'good' | 'windy' | 'rainy' | 'stormy';
+            ---
+             // Best to convert these to Enums
+          export enum Visibility {
+              Great = 'great',
+              Good = 'good',
+              Ok = 'ok',
+              Poor = 'poor',
+            }
+            
+            // export type Weather = 'sunny' | 'windy' | 'rainy' | 'cloudy';
+            
+            export enum Weather {
+              Sunny = 'sunny',
+              Rainy = 'rainy',
+              Cloudy = 'cloudy',
+              Stormy = 'stormy',
+              Windy = 'windy',
+          }
+       ( You can use the  `values` of the specified keys for various operations )
       ```
     
   1. Next create a `DiaryEntry` type, which will be an interface:
