@@ -334,4 +334,29 @@
           >
           >If a field, e.g. **comment would be optional**, the type narrowing should take that into account, and the operator _in_ could **not be used** quite as we did here, since the in test requires the field to be present.
        
-    
+  1. Finally , you catch any of the parsing errors in the router accepting the entry and return the proper failure message to the client :
+        
+        ```javascript
+             //routes/diaries.ts
+
+            router.post('/', (req, res) => {
+            
+              try{
+                    // proofing on the data types would be performed here:
+                      const diaryEntry = toNewDiaryEntry(req.body);
+                             
+                      diaryService.addDiary(diaryEntry);
+                              
+                      return res.json(diaryEntry);
+                          
+                }catch(e){
+                      let errorMessage="Error : ";
+                             
+                        if(e instanceof Error)
+                          errorMessage+=e.message;
+                              
+                        return res.status(400).send(errorMessage);
+                 }
+                          
+                  });
+        ```
