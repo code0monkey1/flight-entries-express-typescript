@@ -42,7 +42,7 @@ const findById= (id:string):DiaryEntry|undefined => {
             ...entry,
             id:Math.max(...diaries.map(d => d.id))+1,
            };
-
+      
             diaries.push(diaryEntry);
          
                
