@@ -330,5 +330,8 @@
                 throw new Error('Incorrect data: some fields are missing');
                   };
           ```
+          > _What is the **comment was optional** in the above function?_
+          >
+          >If a field, e.g. **comment would be optional**, the type narrowing should take that into account, and the operator _in_ could **not be used** quite as we did here, since the in test requires the field to be present.
        
     
