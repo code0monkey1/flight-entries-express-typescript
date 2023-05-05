@@ -217,7 +217,7 @@
  
  ---
 
- ### Proofing requests ( Extremely important to proof all the data you get from the frontend )         
+ ## Proofing external data ( Extremely important to proof all the data you get from an external source )         
 
 
   1. **Adding new Diary Entry : ( Create New Diary Operation)** 
@@ -249,16 +249,30 @@
 
       > **unknown** is the ideal type for our kind of situation of input validation, since we don't yet need to define the type to match any type, but can first verify the type and then confirm the expected type.
 
-  1. The way we sanitize the data is by using `TypeGuards`
-   
-       + isString :
+  1. Steps to take to  sanitize external data  by using `TypeGuards` ( Chaining different type guards in a specific order to sanitize input data )
+  
+      + `First level of sanitization` : ensure that the `data` is present and is of type `string`
+          + isString :
        
-          ```javascript
-            const isString = (text: unknown):text is string=>{
-   
-               return typeof text === "string";
+            ```javascript
+              const isString = (text: unknown):text is string=>{
+     
+                 return typeof text === "string";
+  
+                   };
+       
+           ``` 
 
-                 };
-          ``` 
-       + isDate 
+       + Next , we move to a more specific type , eg : a Date ( you need to have verified already that it's a string before confirming that the incoming string is a Date type)
+         + isDate :
+           
+             ```javascript
+                   // you need to already know that this is a string to use this function
+                  const isDate= (date:string):boolean => {
+                    
+                          return Boolean(Date.parse(date));
+                  };
+             ```
+     
        
+    
