@@ -37,11 +37,16 @@ const findById= (id:string):DiaryEntry|undefined => {
 
     
   const addDiary = (entry:NewDiaryEntry) => {
-            
-            
+           
+           const diaryEntry:DiaryEntry = {
+            ...entry,
+            id:Math.max(...diaries.map(d => d.id))+1,
+           };
+
+            diaries.push(diaryEntry);
          
                
-          };
+        };
               
     export default {
                 getEntries,

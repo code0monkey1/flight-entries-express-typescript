@@ -217,9 +217,9 @@
  
  ---
 
- ## Proofing requests ( Extremely important to proof all the data you get from the frontend )         
+ ### Proofing requests ( Extremely important to proof all the data you get from the frontend )         
 
 
-    1. Adding new Diary Entry : ( Create New Diary Operation)
-
-  
+  1. **Adding new Diary Entry : ( Create New Diary Operation)** 
+        
+      > While accepting  a new entry from an external API ,  you need to **sanitize the data properly** , to **check they belong to the expected type** . If not , you need to _throw an Exception and reject the entry at the router_ level.          
