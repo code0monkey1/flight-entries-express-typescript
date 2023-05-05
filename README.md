@@ -256,12 +256,9 @@
        
             ```javascript
               const isString = (text: unknown):text is string=>{
-     
                  return typeof text === "string";
-  
-              };
-           ``` 
-
+              }
+            ```
        + Next , we move to a more general type , eg : a Date ( you need to have verified already that it's a string before confirming that the incoming string is a Date type)
          + isDate :
            
@@ -307,7 +304,8 @@
           ```    
         + *toNewDiaryEntry* : ( The final function responsible for parsing the entry and returning a sanitized entry goes something like this : )
           ```javascript
-                const toNewDiaryEntry = (object: unknown): NewDiaryEntry => {
+                \\ util\index.ts
+                export const toNewDiaryEntry = (object: unknown): NewDiaryEntry => {
                      // you need to ensure that the data you expect to parse is present
                     if ( !object || typeof object !== 'object' ) {
                       throw new Error('Incorrect or missing data');
