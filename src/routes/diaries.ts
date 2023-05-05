@@ -5,6 +5,7 @@ const router = express.Router();
 import { toNewDiaryEntry } from '../../utils';
 
 import diaryService from '../services/diaryService';
+import { DiaryEntry } from '../types';
 
 router.get('/', (_req, res) => {
 
@@ -29,9 +30,9 @@ router.post('/', (req, res) => {
   // proofing on the data types would be performed here:
    const diaryEntry = toNewDiaryEntry(req.body);
    
-   diaryService.addDiary(diaryEntry);
+   const addedEntry:DiaryEntry =diaryService.addDiary(diaryEntry);
     
-   return res.json(diaryEntry);
+   return res.json(addedEntry);
 
   }catch(e){
      let errorMessage="Error : ";
