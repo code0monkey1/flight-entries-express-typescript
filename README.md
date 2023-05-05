@@ -230,15 +230,23 @@
      
        import { NewDiaryEntry } from './types';
 
-        const toNewDiaryEntry = (object: unknown): NewDiaryEntry => {
-          const newEntry: NewDiaryEntry = {
-            // ...
-          }
+      const toNewDiaryEntry = (object: unknown): NewDiaryEntry => {
+
+      console.log(object); // now object is no more unused
+     // the actual new entry will be sent after validation
+     const newEntry: NewDiaryEntry = {
+           weather: 'cloudy', // temporary fake the return value
+           visibility: 'great',
+           date: '2022-1-1',
+           comment: 'fake news'
+         };
         
-          return newEntry;
-        }
+         return newEntry;
+      };
         
-        export default toNewDiaryEntry;
+      export default toNewDiaryEntry;
       ```
 
       > **unknown** is the ideal type for our kind of situation of input validation, since we don't yet need to define the type to match any type, but can first verify the type and then confirm the expected type.
+
+  1. Next , we pass the sanitized values to the `addNewEntry` function. 
