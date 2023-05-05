@@ -222,4 +222,4 @@
 
     1. Adding new Diary Entry : ( Create New Diary Operation)
 
-     https://www.chiranjeevthomas.com
+  
