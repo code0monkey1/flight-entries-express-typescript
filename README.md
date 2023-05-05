@@ -290,7 +290,7 @@
       
       + isVisibility:
           > Similarly we can go on doing this for comments and `Visibility` and `Weather`  
-          
+
           ```javascript
 
             const isVisibility = (param: string): param is Visibility => {
@@ -305,6 +305,30 @@
             };
 
           ```    
-     
+     + *toNewDiaryEntry* : ( The final function responsible for parsing the entry and returning a sanitized entry goes something like this : )
+          ```javascript
+                const toNewDiaryEntry = (object: unknown): NewDiaryEntry => {
+                     // you need to ensure that the data you expect to parse is present
+                    if ( !object || typeof object !== 'object' ) {
+                      throw new Error('Incorrect or missing data');
+                    }
+                  
+                    if ('comment' in object && 'date' in object && 'weather' in object && 'visibility' in object)  {
+
+                     // only after you've verified that the data to be parsed in present, do you go and parse it .
+
+                      const newEntry: NewDiaryEntry = {
+                        weather: parseWeather(object.weather),
+                        visibility: parseVisibility(object.visibility),
+                        date: parseDate(object.date),
+                        comment: parseComment(object.comment)
+                      };
+                        
+                    return newEntry;
+                }
+              
+                throw new Error('Incorrect data: some fields are missing');
+                  };
+          ```
        
     
