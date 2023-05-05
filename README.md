@@ -196,9 +196,9 @@
         const entry = diaries.find(d => d.id === id);
         return entry;
       ```
-   2. The route handler for it :
+   1. The route handler for it :
 
-          ```javascript
+        ```javascript
             // routes/diaries.ts
                     import express from 'express';
                     import diaryService from '../services/diaryService'
@@ -212,6 +212,14 @@
                         res.status(404);
                       }
                     });
+        ```
                     
-          ```
+ 
+ ---
 
+ ## Proofing requests ( Extremely important to proof all the data you get from the frontend )         
+
+
+    1. Adding new Diary Entry : ( Create New Diary Operation)
+
+     https://www.chiranjeevthomas.com

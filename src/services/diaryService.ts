@@ -6,7 +6,7 @@
  // we are taking a risk here by asserting 
  // ideally you'd use a type guard
                 
- import { DiaryEntry, NonSensitiveDiaryEntry } from '../types';
+ import { DiaryEntry, NewDiaryEntry, NonSensitiveDiaryEntry } from '../types';
 
  const getEntries = ():DiaryEntry[] => {
                
@@ -36,9 +36,12 @@ const findById= (id:string):DiaryEntry|undefined => {
 
 
     
-    const addDiary = () => {
-                return null;
-              };
+  const addDiary = (entry:NewDiaryEntry) => {
+            
+            
+         
+               
+          };
               
     export default {
                 getEntries,

@@ -2,6 +2,7 @@ import express from 'express';
 
 const router = express.Router();
 
+import { toNewDiaryEntry } from '../../utils';
 import diaryService from '../services/diaryService';
 
 router.get('/', (_req, res) => {
@@ -21,8 +22,25 @@ router.get("/:id", (req, res) => {
 
 });
 
-router.post('/', (_req, res) => {
-   res.send('Saving Entry');
+router.post('/', (req, res) => {
+  
+  try{
+  // proofing on the data types would be performed here:
+   const diaryEntry = toNewDiaryEntry(req.body);
+   
+   diaryService.addDiary(diaryEntry);
+    
+   return res.json(diaryEntry);
+
+  }catch(e){
+     let errorMessage="Error : ";
+   
+     if(e instanceof Error)
+        errorMessage+=e.message;
+    
+     return res.status(400).send(errorMessage);
+  }
+
 });
 
 export default router;
