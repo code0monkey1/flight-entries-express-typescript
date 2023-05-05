@@ -259,8 +259,7 @@
      
                  return typeof text === "string";
   
-                   };
-       
+              };
            ``` 
 
        + Next , we move to a more general type , eg : a Date ( you need to have verified already that it's a string before confirming that the incoming string is a Date type)
@@ -288,10 +287,11 @@
                 };
              ```
       
-      + isVisibility:
-          > Similarly we can go on doing this for comments and `Visibility` and `Weather`  
+        + isVisibility:
+          > Similarly , we can go on doing this for `comments` and `Visibility` and `Weather`  
 
           ```javascript
+             Eg : 
 
             const isVisibility = (param: string): param is Visibility => {
               return Object.values(Visibility).map(v => v.toString()).includes(param);
@@ -305,7 +305,7 @@
             };
 
           ```    
-     + *toNewDiaryEntry* : ( The final function responsible for parsing the entry and returning a sanitized entry goes something like this : )
+        + *toNewDiaryEntry* : ( The final function responsible for parsing the entry and returning a sanitized entry goes something like this : )
           ```javascript
                 const toNewDiaryEntry = (object: unknown): NewDiaryEntry => {
                      // you need to ensure that the data you expect to parse is present
