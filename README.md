@@ -222,9 +222,13 @@
 
   1. **Adding new Diary Entry : ( Create New Diary Operation)** 
         
-      > While accepting  a new entry from an external API ,  you need to **sanitize the data properly** , to **check they belong to the expected type** . If not , you need to _throw an Exception and reject the entry at the router_ level.          
+      > While accepting  a new entry from an external API ,  you need to **sanitize the data properly** , to **check they belong to the expected type** . If not , you need to _throw an Exception and reject the entry at the router_ level.  
+
+      > For this we create a utility function `toNewDataEntry`, which takes in an unknown object and return to us a `NewDiaryEntry` type object ( which is a DiaryEntry , without an `id` )  
+
       ```javascript
-      import { NewDiaryEntry } from './types';
+     
+       import { NewDiaryEntry } from './types';
 
         const toNewDiaryEntry = (object: unknown): NewDiaryEntry => {
           const newEntry: NewDiaryEntry = {
