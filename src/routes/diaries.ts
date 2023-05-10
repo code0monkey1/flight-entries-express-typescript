@@ -5,12 +5,12 @@ const router = express.Router();
 import { toNewDiaryEntry } from '../../utils';
 
 import diaryService from '../services/diaryService';
+
 import { DiaryEntry } from '../types';
 
 router.get('/', (_req, res) => {
 
   res.json(diaryService.getNonSensitiveEntries());
- 
 });
 
 router.get("/:id", (req, res) => {
@@ -21,7 +21,6 @@ router.get("/:id", (req, res) => {
       res.status(404).end();
    else
       res.json(diary);
-
 });
 
 router.post('/', (req, res) => {
@@ -42,7 +41,6 @@ router.post('/', (req, res) => {
     
      return res.status(400).send(errorMessage);
   }
-
 });
 
 export default router;
