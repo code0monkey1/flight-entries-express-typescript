@@ -70,6 +70,7 @@ export const toNewDiaryEntry = (object: unknown): NewDiaryEntry => {
       !("visibility" in object)) {
 
         throw new Error("Fields in input missing "+ JSON.stringify(object,null,2));
+        
     }
 
   const newEntry: NewDiaryEntry = {
